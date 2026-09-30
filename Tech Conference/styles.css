@@ -1,0 +1,539 @@
+/* General Styling */
+:root {
+    --primary-pink: #FF69B4; /* Hot Pink */
+    --secondary-orange: #ff28ad; /* Orange */
+    --dark-text: #333;
+    --light-text: #fff;
+    --light-bg: #f9f9f9;
+    --accent-gray: #eee;
+
+    /* New colors for the registration form, based on user provided style */
+    --form-gradient-start: #667eea; /* Blue */
+    --form-gradient-end: #764ba2;   /* Purple */
+    --form-heading-color: #4a148c;  /* Dark Purple */
+    --form-label-color: #5a2a83;    /* Medium Purple */
+    --form-border-color: #c6b8dd;   /* Light Purple */
+    --form-focus-border: #764ba2;
+    --form-button-bg: #764ba2;
+    --form-button-hover: #5a2a83;
+    --form-success-color: #2e7d32;  /* Success Green */
+    --form-error-color: #d32f2f;    /* Error Red */
+}
+
+/* Import Poppins font for the new form section */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Default font for the rest of the site */
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-pink);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-orange);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #e09500; /* Slightly darker orange */
+    text-decoration: none;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--dark-text); /* Dark background for contrast */
+    color: var(--light-text);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 50px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-pink);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--light-text);
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px; /* Fixed height for hero */
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+/* About Video Section */
+.about-video, .agenda-section, .speakers-section, .faq-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-video h2, .agenda-section h2, .speakers-section h2, .faq-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-pink);
+}
+
+.about-video p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #000; /* Placeholder background */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Registration Form Section - NEW STYLES (from user's provided HTML) */
+/* This section now acts as the main container for the registration form */
+.registration-form {
+    /* Apply the gradient background and centering to this section */
+    background: linear-gradient(135deg, var(--form-gradient-start) 0%, var(--form-gradient-end) 100%);
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font specifically here */
+    color: #333; /* Default text color for the form content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    padding: 20px; /* Padding around the form container */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    text-align: center; /* Center the content within the section */
+}
+
+/* Styles for the inner form container (previously .container in user's snippet) */
+.registration-form .registration-form-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 480px;
+    padding: 30px 40px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin: auto; /* Center the container within the flex parent */
+}
+
+.registration-form h1 { /* Specific to the form's heading */
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--form-heading-color);
+    font-weight: 600;
+    font-size: 2.5em; /* Adjust size for section heading */
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--form-label-color);
+    text-align: left; /* Align labels to the left */
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="tel"],
+.registration-form select {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1.8px solid var(--form-border-color);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.registration-form input[type="text"]:focus,
+.registration-form input[type="email"]:focus,
+.registration-form input[type="tel"]:focus,
+.registration-form select:focus {
+    outline: none;
+    border-color: var(--form-focus-border);
+    box-shadow: 0 0 8px rgba(118,75,162,0.3);
+}
+
+.registration-form button {
+    background: var(--form-button-bg);
+    color: var(--light-text);
+    padding: 14px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
+    margin-top: 10px; /* Add some space above the button */
+}
+
+.registration-form button:hover {
+    background: var(--form-button-hover);
+}
+
+.registration-form .message {
+    text-align: center;
+    margin-top: 18px;
+    font-weight: 600;
+    color: var(--form-success-color); /* success green */
+}
+
+.registration-form .error {
+    color: var(--form-error-color);
+    font-size: 14px;
+    margin-top: -15px; /* Adjust margin to pull error closer to input */
+    margin-bottom: 15px;
+    text-align: left; /* Align error messages to the left */
+}
+
+/* Responsive adjustments for the new form container */
+@media (max-width: 520px) {
+    .registration-form .registration-form-container {
+        padding: 25px 20px;
+    }
+}
+
+
+/* FAQ Section */
+.faq-section {
+    background-color: var(--light-bg);
+}
+
+.faq-item {
+    background-color: var(--accent-gray);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.faq-item details {
+    cursor: pointer;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    color: var(--dark-text);
+    padding: 5px 0;
+    outline: none; /* Remove default outline on click */
+}
+
+.faq-item summary:hover {
+    color: var(--primary-pink);
+}
+
+.faq-item p {
+    padding-top: 10px;
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+/* Agenda Table */
+.agenda-section h3 {
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--secondary-orange);
+}
+
+.agenda-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.agenda-section th,
+.agenda-section td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.agenda-section th {
+    background-color: var(--primary-pink);
+    color: var(--light-text);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.agenda-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.agenda-section tr:hover {
+    background-color: #e0e0e0;
+}
+
+.agenda-section .break {
+    background-color: var(--secondary-orange);
+    color: var(--light-text);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Speakers Grid */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.speaker-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling for <img> tags within speaker cards */
+.speaker-card img {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-bottom: 15px; /* Space below the image */
+    border: 4px solid var(--primary-pink); /* Pink border */
+    display: block; /* Ensures margin auto works for centering */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+}
+
+
+.speaker-card h3 {
+    font-size: 1.5em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.speaker-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+.social-links img {
+    margin: 0 10px;
+    height: 24px; /* Adjust icon size */
+    filter: invert(100%); /* Make icons white */
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design with Media Queries (General Site) */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    /* .registration-form h1 is already handled by its specific rule above */
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+
+    .hero-section {
+        padding: 100px 20px;
+        height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .about-video h2, .agenda-section h2, .speakers-section h2, .faq-section h2 {
+        font-size: 2em;
+    }
+
+    .agenda-section th,
+    .agenda-section td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .speakers-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 400px;
+        padding: 80px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .faq-item {
+        padding: 10px 15px;
+    }
+}

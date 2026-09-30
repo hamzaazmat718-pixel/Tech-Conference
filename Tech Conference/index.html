@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Conference 2025: Innovate & Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><img src="Screenshot 2025-06-03 140507.png" alt="Tech Conference Logo"></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="#registration">Register</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Tech Connect 2025: Innovate & Connect</h1>
+                <p>Join us from **October 26-28, 2025**, for a groundbreaking event bringing together the brightest minds in technology. Explore the future of innovation!</p>
+                <a href="#registration" class="btn">Register Now</a>
+            </div>
+        </section>
+
+        <section class="about-video">
+            <div class="container">
+                <h2>Why Attend Tech Conference 2025?</h2>
+                <p>Get a glimpse of what awaits you at our premier tech event. Hear from industry leaders, discover cutting-edge solutions, and network with peers.</p>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vmNUpglYirg?si=VT0s0NH3VrtKjEBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <small>The YouTube video ID has been updated. Please ensure this link points to a valid YouTube video for embedding.</small>
+            </div>
+        </section>
+
+        <section id="registration" class="registration-form">
+            <div class="registration-form-container" role="main">
+                <h1>Conference Registration</h1>
+                <form id="registrationForm" novalidate action="/register/submit" method="POST">
+                    <label for="fullName">Full Name<span aria-hidden="true" style="color:#d32f2f;"> *</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your full name" required aria-required="true" />
+
+                    <label for="email">Email Address<span aria-hidden="true" style="color:#d32f2f;"> *</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required aria-required="true" />
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" />
+
+                    <label for="organization">Organization</label>
+                    <input type="text" id="organization" name="organization" placeholder="Your organization or company" />
+
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" placeholder="Your job title" />
+
+                    <label for="track">Conference Track<span aria-hidden="true" style="color:#d32f2f;"> *</span></label>
+                    <select id="track" name="track" required aria-required="true">
+                        <option value="" disabled selected>Select a track</option>
+                        <option value="technology">Technology</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="business">Business</option>
+                        <option value="design">Design</option>
+                    </select>
+
+                    <button type="submit">Register</button>
+                </form>
+                <div class="message" aria-live="polite" role="alert"></div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <details>
+                        <summary>What are the dates and location of the conference?</summary>
+                        <p>Prepare to innovate and connect at Tech Conference 2025, scheduled for October 26-28, 2025, at the state-of-the-art Orangi Town Convention Center..</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>How can I register for the conference?</summary>
+                        <p>You can register by filling out the registration form located on this page, or by clicking the "Register Now" button above.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Are there any early bird discounts?</summary>
+                        <p>Information regarding early bird discounts and pricing tiers will be announced soon. Please subscribe to our newsletter for updates!</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Will the sessions be recorded?</summary>
+                        <p>Yes, all main stage sessions will be recorded and available to registered attendees for a limited time after the conference.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Tech Conference. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx--v1.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="registration-form.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</body>
+</html>
